@@ -10,3 +10,7 @@ class Post(db.Model):
     body = db.TextProperty(required = True)
     created = db.DateTimeProperty(auto_now_add = True)
     # TODO - we need an author field here; it should be required
+    author = db.ReferenceProperty(User, required = True)
+
+    def get_username():
+        author.username
